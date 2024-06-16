@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Bucks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            /* height: 100px; */
+            /* background-color: rgb(16, 10, 10); */
+
+        }
+
+        .logo img {
+            width: 80px;
+            height: 70px;
+            padding: 20px;
+            margin-left: 30px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            
+        }
+
+        nav ul li {
+            list-style-type: none;
+            margin-right: 40px;
+           
+            /* margin-top: -20px; */
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 25px;
+            color: rgb(70, 91, 70);
+        }
+
+        nav ul li a:hover {
+            color: red;
+        }
+
+        .menu-bar {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .home {
+            background-color: #e9cca4;
+            height: 510px;
+        }
+
+        .home-details {
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .home-details .home-info {
+            padding: 20px;
+        }
+
+        .home-info p {
+            font-size: 25px;
+        }
+
+        .home-info h1 {
+            font-size: 50px;
+            color: rgb(3, 99, 3);
+        }
+
+        .home-info h4 {
+            font-size: 30px;
+            margin-bottom: 50px;
+            line-height: 40px
+        }
+
+        .home-info a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border: 2px solid black;
+            border-radius: 50px;
+            padding: 20px;
+            transition: all 0.5s ease;
+
+        }
+
+        .home-info a:hover {
+            background-color: #006241;
+            transform: scaleX(1.2);
+        }
+
+        .home-img img {
+
+            transition: all 0.6s;
+        }
+
+        .home-img img:hover {
+            transform: scale(1.2);
+        }
+
+        .shop {
+            height: 100%;
+            width: 100%;
+            /* position: absolute; */
+            background-color: rgb(220, 217, 217);
+        }
+
+        .shop-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .shop-info p {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 0px;
+            padding: 20px;
+        }
+
+        .shop-info h3 {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #006241;
+            font-size: 30px;
+            margin-top: 10px;
+
+        }
+
+        .card {
+            width: 300px;
+            height: 320px;
+            background-color: #006241;
+            margin-bottom: 100px;
+            margin: 20px;
+        }
+
+        .card img {
+            margin-top: -100px;
+            margin-left: 100px;
+        }
+
+        .shop-cards {
+            margin-left: 200px;
+            margin-top: 100px;
+        }
+
+        .stars,
+        .cost,
+        h2 {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .button {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button button {
+            padding: 10px;
+            border-radius: 20px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            transition: all 0.6s;
+
+        }
+
+        .button button:hover {
+            background-color: #e9cca4;
+            color: black;
+
+            transform: scale(1.1);
+        }
+
+        .delivery {
+            height: 100%;
+            width: 100%;
+            background-color: #e9cca4;
+            margin-top: 0px;
+        }
+
+        .delivery-info p {
+            margin-top: 0px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .delivery-info h1 {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 35px;
+            color: #006241;
+        }
+
+        :root {
+            color: --primary-color var(#006241);
+        }
+
+        .delivery-images {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+            margin-left: 150px;
+        }
+
+        .del-info {
+            margin-left: 40px;
+        }
+
+        .del-info h2 {
+            color: black;
+            font-size: 35px;
+        }
+
+        .del-info p {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .del-info button {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 210px;
+            margin-top: 40px;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            transition: all 0.6s;
+        }
+
+        .del-info button:hover {
+            background-color: #e9cca4;
+            transform: scale(1.1);
+        }
+
+        .app-info p {
+            margin-top: 0px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .app-info h1 {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 35px;
+            color: #006241;
+        }
+
+        .alt-info button {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 150px;
+            margin-top: 40px;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            transition: all 0.6s;
+        }
+
+        .alt-info button:hover {
+            background-color: #e9cca4;
+            transform: scale(1.1);
+        }
+
+        .app-information {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .app {
+            background-color: rgb(220, 217, 217);
+            padding: 30px;
+        }
+
+        .alt-info {
+            margin-left: 100px;
+            margin-top: 60px;
+            padding: 30px;
+        }
+
+        .alt-info h1 {
+            font-size: 30px;
+        }
+
+        .alt-info p {
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        .app-img {
+            margin-left: 30px;
+            padding: 30px;
+        }
+
+        .about {
+            background-color: #e9cca4;
+        }
+
+        .about-info {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+            margin-left: 50px;
+        }
+
+        .about-info img {
+            margin: 20px;
+        }
+
+        .info {
+            margin: 20px;
+
+        }
+
+        .info h1 {
+            font-size: 30px;
+        }
+        .info p{
+            font-size: 25px;
+            line-height: 40px;
+            margin-bottom: 40px;
+        }
+        .info a{
+            padding: 20px;
+            background-color: #006241;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 20px;
+            transition: all 0.6s;
+        }
+        .info a:hover{
+            background-color: black;
+            transform: scale(1.1);
+        }
+        .contact
+        {
+            background-color: rgb(220, 217, 217);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-icons
+        {
+            padding: 10px;
+        }
+        .contact-icons i{
+            font-size: 35px;
+            padding: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+        .contact-icons i:hover
+        {
+            color: red;
+            transform: scale(1.2);
+        }
+        .terms
+        {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .terms .of {
+            margin-left: 40px;
+        }
+        .terms .company{
+            margin-left: 40px;
+        }
+        footer
+        {
+            background-color: #e9cca4;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+        }
+        footer h5{
+            font-size: 20px;
+        }
+        @media (max-width:600px) {
+            nav ul {
+                position: absolute;
+                top: 120px;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                background-color: #e9cca4;
+                align-items: center;
+                overflow: hidden;
+                gap: 0;
+                transition: all 0.7s;
+            }
+            nav ul li{
+                padding: 10px;
+                
+            }
+            
+            .menu-bar {
+                display: block;
+                font-size: 26px;
+                padding: 20px;
+            }
+            .home-details
+            {
+                padding: 0%;
+                margin: 0%;
+            }
+            .home-details h1{
+                font-size: 35px;
+            }
+            .home-details h4{
+                font-size: 25px;
+                margin-bottom: 30px;
+            }
+            .home-details a{
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .home-img img
+            {
+                width: 200px;
+                height: 200px;
+                margin-left: -30px;
+                margin-top: 20px;
+            }
+            .shop-cards 
+            {
+                margin: 0%;
+                padding: 0%;
+            }
+            .card
+            {
+                margin-top: 120px;
+            }
+            .app
+            {
+                padding: 0%;
+                margin: 0%;
+            }
+            .delivery
+            {
+                padding: 0%;
+                margin: 0%;
+            }
+            .delivery h1{
+                font-size: 30px;
+            }
+            .delivery-images
+            {
+                padding: 0%;
+                margin: 0%;
+            }
+            .del-img img{
+                height: 250px;
+                width: 300px;
+                margin-left: 30px;
+                margin-top: 20px;
+            }
+            .del-info
+            {
+                margin: 0%;
+                padding: 0%;
+            }
+            .del-info button , .alt-info button{
+                margin: 0%;
+                margin-left:100px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .app-information
+            {
+                margin: 0%;
+                padding: 0%;
+            }
+            .alt-info
+            {
+                margin: 0%;
+                padding: 20px;
+            }
+            .alt-info h1{
+            text-align: center;       
+             }
+             .alt-info  p{
+                font-size: 19px;
+             }
+             .app-img img
+             {
+                margin: 0%;
+                padding: 0%;
+                width: 250px;
+                height: 200px;
+             }
+             .about-info 
+             {
+                padding: 10px;
+                margin: 0%;
+             }
+             .img img{
+                height: 300px;
+                width: 300px;
+                margin-top: 30px;
+             }
+             .info a{
+                margin: 0%;
+                margin-left: 50px;
+                margin-bottom: 40px;
+             }
+             .contact-icons i{
+                font-size: 25px;
+                padding: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+             }
+             .terms
+             {
+                padding: 0%;
+                margin: 0%;
+                margin-bottom: 20px;
+             }
+             .terms .of,  .terms .company
+             {
+                margin-left: 10px;
+             }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header" id="header">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png">
+                </div>
+                <ul id="menulist">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#delivery">Delivery</a></li>
+                    <li><a href="#app">App</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-bar">
+                    <i class="fas fa-bars" onclick="openmenu()"></i>
+                </div>
+            </nav>
+        </div>
+
+        <div class="home">
+            <div class="home-details">
+                <div class="home-info">
+                    <p>Welcome to</p><br>
+                    <h1>Starbucks Coffee</h1><br>
+                    <h4>FREE COFFEE IS A <br>TAP AWAY</h4>
+                    <a href="#">Join Now</a>
+                </div>
+                <div class="home-img">
+                    <img src="images/home.png" width="400px" height="350px">
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="shop" id="shop">
+                <div class="shop-info">
+                    <p>SHOP NOW</p>
+                    <h3>SHOP COFFEE</h3>
+                </div>
+                <div class="shop-cards">
+                    <div class="card">
+                        <img src="images/shop1.png" height="200px" width="100px">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <h2>Starbucks Coffee</h2>
+                        <div class="cost">
+                            <i class="fa-sharp fa-solid fa-dollar-sign"></i> 12.4
+                        </div>
+                        <div class="button">
+                            <button>Order Now</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/shop2.png" height="200px" width="120px">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <h2>Starbucks Coffee</h2>
+                        <div class="cost">
+                            <i class="fa-sharp fa-solid fa-dollar-sign"></i> 12.9
+                        </div>
+                        <div class="button">
+                            <button>Order Now</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/shop3.png" height="200px" width="100px">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <h2>White Chocolate Mocha</h2>
+                        <div class="cost">
+                            <i class="fa-sharp fa-solid fa-dollar-sign"></i> 14
+                        </div>
+                        <div class="button">
+                            <button>Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="delivery" id="delivery">
+                <div class="delivery-info">
+                    <p>Get Now</p>
+                    <h1>ORDER WITH UBER EATS</h1>
+                </div>
+                <div class="delivery-images">
+                    <div class="del-img">
+                        <img src="images/delivery.png" height="350px" width="420px">
+                    </div>
+                    <div class="del-info">
+                        <h2>Today Deserves delivery</h2><br>
+                        <p> Your coffee is on its way<br>
+                            Order Starbucks® delivery on DoorDash or<br> Uber Eats and let your favorites come to<br>
+                            you.</p>
+                        <button>Order Now</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="app" id="app">
+                <div class="app-info">
+                    <p>OUR APP</p>
+                    <h1>DOWNLOAD APP</h1>
+                </div>
+                <div class="app-information">
+                    <div class="alt-info">
+                        <h1>Fall into an easier routine</h1><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Dicta natus magni exercitationem
+                            beatae fugiat iure placeat sunt facere rem<br> ipsa. Qui nobis eaque temporibus pariatur
+                            dolor
+                            at rem cupiditate veritatis!</p>
+                        <button>Get App</button>
+                    </div>
+                    <div class="app-img">
+                        <img src="images/app.png" width="500px" height="400px">
+                    </div>
+                </div>
+        </section>
+
+        <section>
+            <div class="about" id="about">
+                <div class="about-info">
+                    <div class="img">
+                        <img src="images/about.png" width="400px" height="350px">
+                    </div>
+                    <div class="info">
+                        <h1>50 years of serving communities</h1><br>
+                        <p>Starbucks is an American company that operates <br>the largest coffeehouse chain and one of the
+                            most<br> recognizable brands in the world. Headquartered <br>in Seattle, Washington, the company
+                            operates more than<br> 35,000 stores across 80 countries (as of 2022).</p>
+                        <a href="https://www.starbucks.com/about-us/">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="contact" id="contact">
+                <div class="contact-icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="terms">
+                    <div class="policy">
+                        <h3>Privacy</h3>
+                    </div>
+                        <div class="of">
+                            <h3>Terms of use</h3>
+                        </div>
+                        <div class="company">
+                            <h3>Our company</h3>
+                        </div>
+                    </div><br>
+                    
+                </div>
+            </div>
+        </section>
+        <footer>
+            <h5><i class="fa-solid fa-copyright"></i>Karthickpm All Rights Resered</h5>
+        </footer>
+        <script>
+
+            let menulist = document.getElementById("menulist")
+
+            menulist.style.maxHeight = "0px";
+
+            function openmenu() {
+                if (menulist.style.maxHeight == "0px") {
+                    menulist.style.maxHeight = "300px";
+                }
+                else {
+                    menulist.style.maxHeight = "0px";
+                }
+            }
+        </script>
+
+</body>
+
+</html>
